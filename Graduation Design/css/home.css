@@ -1,0 +1,131 @@
+body{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.navigation{
+    position: relative;
+    width: 100%;
+    height: 4em;
+    background-color:rgb(92,92,92);
+    font-size: 2em;
+    text-align: center;
+}
+.map span,.mapend span{
+    color: rgb(255,255,255,255);
+}
+.serch{
+width: 30%;
+float: left;
+position: relative;
+top: 1.5em;
+}
+.map{
+position:relative;
+top:1.5em;
+width: 40%;
+float: left;
+}
+.mapend{
+position:relative;
+top:1.5em;
+width: 27%;
+float: left;
+}
+.mainbody{
+    position: relative;
+    width: 100%;
+    height: 80em;
+}
+.zhanshi{
+    position: relative;
+    top: -1em;
+    width: 100%;
+    height: 3em;
+    background-color: rgb(92,92,92);
+    text-align: center;
+    font-size: 2em;
+    color: rgb(255,255,255,255);
+}
+.zhanshi span{
+    position: relative;
+    top: 0.6em;
+}
+.showtime{
+    position: relative;
+    width: 100%;
+    height: 20em;
+    background-color: rgb(220,124,255);
+    
+}
+.show{
+    position: relative;
+    top: -1.9em;
+    width: 100%;
+    height: 100%;
+}
+.show embed{
+    position: relative;
+    
+}
+.box{
+    width: 100%;
+    height: 205em;
+    top: -2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index:2;
+    position: relative; 
+    left:0; 
+    top:0;  
+    
+
+}
+.box1,.box2,.box3,.box4,.box5,.box6,.box7,.box8,.box9,.box10,.box11,.box12{
+    width: 40em;
+    height: 45em;
+    margin: 7em;
+    background-color: rgb(231,231,231,.6);
+    border-radius: 1em;
+    text-align:center
+}
+.photo{
+    margin:0 auto;
+    width: 90%;
+    height: 60%;
+    position: relative;
+    top: 2em;
+    
+}
+.photo img{
+    border-radius: 1em;
+}
+.textname{
+    margin:0 auto;
+    width: 90%;
+    height: 30%;
+    position: relative;
+    top: 2em;
+    border-radius: 1em;
+    background-color: rgb(69,69,69,.3);
+}
+
+.show embed{
+    width: 100%;
+    height: 100%;
+    z-index:1;
+    position:absolute;
+    top: 0; 
+}
+
+.footer{
+    width: 100%;
+    height: 4em;
+    background-color: rgb(92,92,92);
+    position: relative;
+    font-size: 2em;
+    text-align: center;
+    color: rgb(255,255,255,255);
+    top: 80em;
+}
