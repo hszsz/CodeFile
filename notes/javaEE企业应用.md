@@ -83,7 +83,7 @@ a.view->persistence b.右键点hibernate.cfg.xnl选generate...->by.….
 2.${param.x}将返回一个被调用的请求参数x.
 3.th:utext:如果我们希望Thymeleaf依然转义HTML标签而不是避开，我们将使用th:utext.  
 th:text:如果用这个将转义，html标签，使它展现在浏览器页面中。
-4.1简单表达：
+4.1表达式：
     变量表达式： ${...}
     选择变量表达式： *{...}
     消息表达式： #{...}
