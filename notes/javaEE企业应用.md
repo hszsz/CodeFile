@@ -78,37 +78,57 @@ a.view->persistence b.右键点hibernate.cfg.xnl选generate...->by.….
 
 
 
-2019-7-11
-1.th:href="@{路径}" 链接网址表达式。  
-2.${param.x}将返回一个被调用的请求参数x.
-3.th:utext:如果我们希望Thymeleaf依然转义HTML标签而不是避开，我们将使用th:utext.  
+# 2019-7-11  
+##### 1.th:href="@{路径}" 链接网址表达式。  
+##### 2.${param.x}将返回一个被调用的请求参数x.
+##### 3.th:utext:如果我们希望Thymeleaf依然转义HTML标签而不是避开，我们将使用th:utext.  
 th:text:如果用这个将转义，html标签，使它展现在浏览器页面中。
-4.1表达式：
+##### 4.1表达式：
     变量表达式： ${...}
     选择变量表达式： *{...}
     消息表达式： #{...}
     链接网址表达式： @{...}
     片段表达式： ~{...}
-  4.2字面
+  ##### 4.2字面
     文本：'one text'，'Another one!'，...
     数字：0，34，3.0，12.3，...
     布尔型：true，false
     空： null
     文字标记：one，sometext，main，...
-  4.3文字操作：
+  ##### 4.3文字操作：
     字符串连接： +
     字面替换： |The name is ${name}|
-  4.4算术运算：
+  ##### 4.4算术运算：
     二元运算符：+，-，*，/，%
     减号（一元运算符）： -
-  4.5布尔运算：
+  ##### 4.5布尔运算：
     二元运算符：and，or
     布尔否定（一元运算符）： !，not
-  4.6比较和平等：
+  ##### 4.6比较和平等：
     比较：>，<，>=，<=（gt，lt，ge，le）
     平等运营商：==，!=（eq，ne）
-  4.7条件选择：
+  ##### 4.7条件选择：
     IF-THEN： (if) ? (then)
     IF-THEN-ELSE： (if) ? (then) : (else)
     默认： (value) ?: (defaultvalue)
- 5.th:switch/ th:case选择语句。
+ ##### 5.th:switch/ th:case选择语句。
+
+ ## 2019.7.15  
+ 创建项目  
+ 1.选devtools、jpa\ mysql\webstart  
+ 2.将bootstrap 复制到resources/static  
+ 3.建立一个控制器HomeController. html,测试一下bootstarap。
+4.新建resources/template/include.html 将bootstrap头定义成fragement  
+5.在HomeController中定义/，关联deault.html  
+6.在default.html中引用fragement。
+7.产生model类，写dao
+8.在default中查询数据库
+9.绑表格
+
+## 2019.7.16
+1.th:href传参
+<a th:href="|@{/student/edit?id=}${student.Id}&name=${student.name}|"></a>  
+<a th:href="@{/student/edit(id=${student.id}.name=${student.name})}">  
+第一种方便，第二种安全。  
+2.log的用法  
+private log log = logFactory.getLog(getClass())

@@ -4,8 +4,17 @@
     "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
-    <property name="connection.url"/>
-    <property name="connection.driver_class"/>
+    <property name="connection.url">jdbc:mysql://localhost:3306/student?serverTimezone=GMT</property>
+    <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+    <mapping resource="cn/com/scitc/softwera_1701/model/CourseEntity.hbm.xml"/>
+      <mapping class="cn.com.scitc.softwera_1701.model.CourseEntity"/>
+      <mapping resource="cn/com/scitc/softwera_1701/model/StudentEntity.hbm.xml"/>
+      <mapping class="cn.com.scitc.softwera_1701.model.StudentEntity"/>
+      <mapping resource="cn/com/scitc/softwera_1701/model/StudentscoreEntity.hbm.xml"/>
+      <mapping class="cn.com.scitc.softwera_1701.model.StudentscoreEntity"/>
+    <mapping class="cn.com.scitc.softwera_1701.model.Course"/>
+    <mapping class="cn.com.scitc.softwera_1701.model.Student"/>
+    <mapping class="cn.com.scitc.softwera_1701.model.Studentscore"/>
     <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 
