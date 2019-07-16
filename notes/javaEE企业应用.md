@@ -127,8 +127,20 @@ th:text:如果用这个将转义，html标签，使它展现在浏览器页面�
 
 ## 2019.7.16
 1.th:href传参
+~~~html
 <a th:href="|@{/student/edit?id=}${student.Id}&name=${student.name}|"></a>  
 <a th:href="@{/student/edit(id=${student.id}.name=${student.name})}">  
+~~~
 第一种方便，第二种安全。  
 2.log的用法  
-private log log = logFactory.getLog(getClass())
+private log log = logFactory.getLog(getClass());
+log.info("id=" + id);  
+3.重定向  
+return "redirect:/student/edit?id=1"  
+return "redirect:/";  
+4.控制器获取参数  
+.../update?id=123&name=caidao  
+@PostMapping("/update")  
+private String update(Integer id,String name){
+}  
+id拿到的值是123，name拿到caidao
