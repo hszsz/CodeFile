@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>学生管理</title>
+    <th:block th:replace="include/bootstrap::head"></th:block>
+</head>
+<style>
+    body {
+        padding-top: 20px;
+    }
+
+    .starter-template {
+        padding: 40px 15px;
+        text-align: center;
+    }
+</style>
+<body>
+<div th:replace="include/bootstrap::navbar"></div>
+<div class="container">
+    <div class="starter-template">
+        <table class="table table-stripe table-hover">
+            <tr>
+                <th class="text-center">姓名</th>
+                <th class="text-center">性别</th>
+                <th class="text-center">学号</th>
+                <th class="text-center">年龄</th>
+                <th class="text-center">班级</th>
+                <th class="text-center">操作</th>
+            </tr>
+            <tr th:each="it:${iter}">
+                <td th:text="${it.name}"></td>
+                <td th:text="${it.sex}"></td>
+                <td th:text="${it.id}"></td>
+                <td th:text="${it.age}"></td>
+                <td th:text="${it.clazz}"></td>
+                <td>
+                    <a href="" id="edit" data-toggle="modal" data-target="#myModal"><span
+                            class="glyphicon glyphicon-pencil"></span></a>
+                    <a th:href="@{/student/delete(id=${it.id})}"><span class="glyphicon glyphicon-trash"></span></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">信息中心</h4>
+            </div>
+            <form th:action="@{/studetn/edit}" method="post">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="name">姓名</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="姓名" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="sex">性别</label>
+                        <input type="text" class="form-control" id="sex" name="sex" placeholder="性别" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="id">学号</label>
+                        <input type="text" class="form-control" id="id" name="id" placeholder="学号" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="age">年龄</label>
+                        <input type="text" class="form-control" id="age" name="age" placeholder="年龄">
+                    </div>
+                    <div class="form-group">
+                        <label for="class">班级</label>
+                        <input type="text" class="form-control" id="class" name="classs" placeholder="班级">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                </div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+</body>
+<th:block th:replace="include/bootstrap::script"></th:block>
+<script>
+    $("table a#edit").on("click",function () {
+        // console.log( $($($(this).parent()).siblings()[0]).text() )
+        $("#myModal input#name").val($($($(this).parent()).siblings()[0]).text());
+        $("#myModal input#sex").val($($($(this).parent()).siblings()[1]).text());
+        $("#myModal input#id").val($($($(this).parent()).siblings()[2]).text());
+        $("#myModal input#age").val($($($(this).parent()).siblings()[3]).text());
+        $("#myModal input#class").val($($($(this).parent()).siblings()[4]).text());
+    })
+</script>
+</html>

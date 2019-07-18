@@ -1,10 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <th:block th:include="include/bootstrap :: head">
+
+    </th:block>
 </head>
 <body>
-$END$
+<div th:replace="include/bootstrap :: nav"></div>
+<div class="container">
+
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <h1>student</h1>
+        <div style="margin-bottom: 5px;">
+            <a th:href="@{/student/create}"> 新增</a>
+        </div>
+        <table class="table">
+            <tr>
+                <th>id</th>
+                <th>studentId</th>
+                <th>className</th>
+                <th>name</th>
+                <th>address</th>
+                <th>mobile</th>
+                <th>操作</th>
+            </tr>
+            <tr th:each="student : ${list}">
+                <td th:text="${student.id}"></td>
+                <td th:text="${student.studentId}"></td>
+                <td th:text="${student.className}"></td>
+                <td th:text="${student.name}"></td>
+                <td th:text="${student.address}"></td>
+                <td th:text="${student.mobile}"></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+</div> <!-- /container -->
 </body>
 </html>
