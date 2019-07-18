@@ -4,9 +4,12 @@
     "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
   <session-factory>
-    <property name="connection.url"/>
-    <property name="connection.driver_class"/>
-    <!-- <property name="connection.username"/> -->
+    <property name="connection.url">jdbc:mysql://localhost:3306/student?serverTimezone=GMT</property>
+    <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+      <mapping class="cn.com.scitc.software1701_webapp1.model.Course"/>
+      <mapping class="cn.com.scitc.software1701_webapp1.model.Student"/>
+      <mapping class="cn.com.scitc.software1701_webapp1.model.Studentscore"/>
+      <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 
     <!-- DB schema will be updated if needed -->

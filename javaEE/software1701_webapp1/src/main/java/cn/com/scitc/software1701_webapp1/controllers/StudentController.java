@@ -18,7 +18,8 @@ import java.util.Optional;
 @RequestMapping("/student")
 public class StudentController {
     private Log log = LogFactory.getLog(getClass());
-    private @Autowired StudentDao studentDao;
+    private @Autowired
+    StudentDao studentDao;
     @GetMapping("/edit")
     private String edit(Model model,Integer id){
         log.info("将要显示edit页面");

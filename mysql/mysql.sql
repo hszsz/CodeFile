@@ -64,3 +64,21 @@ INSERT into user(id,name,email,password,password1,sortOrder) value(10,"菜刀9",
 
 --查询表
 SELECT * from user;
+
+SELECT * from student;
+
+
+
+-- student数据库
+SELECT * from course;
+insert into course( courseScore, courseTime, courseType,name) values("数据库",80.5, 20, '必修');
+drop table course;
+
+create table course (
+    id int not null auto_increment primary key,         
+    name varchar(30) not null,                          
+    courseScore decimal(4, 1) not null,                 
+    courseTime int not null,                            
+    courseType varchar(20)                              
+);
+exit;

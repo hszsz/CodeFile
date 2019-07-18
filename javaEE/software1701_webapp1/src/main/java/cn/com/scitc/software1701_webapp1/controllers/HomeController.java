@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/")
 public class HomeController {
-    private @Autowired StudentDao studentDao;
+    private @Autowired
+    StudentDao studentDao;
 
     @GetMapping("/")
     private String page(Model model){

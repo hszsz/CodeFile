@@ -1,9 +1,9 @@
-package cn.com.scitc.apptest1.controller;
+package cn.com.scitc.webapptest10.controller;
 
-import cn.com.scitc.apptest1.dao.StudentDao;
-import cn.com.scitc.apptest1.model.Student;
-import org.apache.juli.logging.Log;
-import org.apache.juli.logging.LogFactory;
+import cn.com.scitc.webapptest10.dao.StudentDao;
+import cn.com.scitc.webapptest10.model.Student;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.sql.Date;
 import java.util.Optional;
 
-
 @Controller
 @RequestMapping("/student")
 public class StudentController {
@@ -24,7 +23,7 @@ public class StudentController {
     private String edit(Model model,Integer id){
         log.info("将要显示edit页面");
         Optional<Student> studentOptional = studentDao.findById(id);
-        model.addAttribute("student",studentOptional.get());
+        model.addAttribute("student", studentOptional.get());
         return "student/edit";
     }
     @PostMapping("/update")
@@ -40,6 +39,23 @@ public class StudentController {
 
         studentDao.save(student);
         log.info("studennt save success");
+        return  "redirect:/";
+    }
+    @RequestMapping("/create")
+    private String create(){
+        log.info("将要显示create页面");
+        return "student/create";
+    }
+    @RequestMapping("/new")
+    private String StudentNew(Integer id, String studentId, String className, String name, String address, String mobile){
+        Student student = new Student();
+        student.setStudentId(studentId);
+        student.setClassName(className);
+        student.setName(name);
+        student.setAddress(address);
+        student.setMobile(mobile);
+
+        studentDao.save(student);
         return  "redirect:/";
     }
     @RequestMapping("/delete")
