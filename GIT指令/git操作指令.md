@@ -34,3 +34,7 @@ git push -u origin master
 ~~~linux
 git remote add origin 远程仓库地址
 ~~~
+10.删除远程地址  
+~~~linux
+git remote rm origin
+~~~
