@@ -82,3 +82,6 @@ create table course (
     courseType varchar(20)                              
 );
 exit;
+
+insert into student(studentId, className, name, address, mobile, birthday) values('12340234', '大数据17-1', 'wangmazi', '四川广元', '13900018888', '1999-01-01');
+SELECT * from student;

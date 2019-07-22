@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <th:block th:include="include/bootstrap :: head">
+
+    </th:block>
+</head>
+<body>
+<div th:replace="include/bootstrap :: nav"></div>
+<div class="container">
+
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <h1>STudentScore</h1>
+        <div style="margin-bottom: 5px;">
+            <a th:href="@{/studentScore/new}"> 新增</a>
+        </div>
+        <table class="table">
+            <tr>
+                <th>id</th>
+                <th>studentId</th>
+                <th>courseId</th>
+                <th>dt</th>
+                <th>score</th>
+                <th>操作</th>
+            </tr>
+            <tr th:each="studentScore : ${list}">
+                <td th:text="${studentScore.id}"></td>
+                <td th:text="${studentScore.studentId}"></td>
+                <td th:text="${studentScore.courseId}"></td>
+                <td th:text="${studentScore.dt}"></td>
+                <td th:text="${studentScore.score}"></td>
+                <td >
+                    <a th:href="@{/studentScore/edit(id=${studentScore.id})}" class="glyphicon glyphicon-pencil">
+                    </a>
+                    <a  onclick="return confirm('将要删除数据，是否继续？');" th:href="@{/studentScore/delete (id=${studentScore.id})}"class="glyphicon glyphicon-remove">
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</div> <!-- /container -->
+</body>
+</html>

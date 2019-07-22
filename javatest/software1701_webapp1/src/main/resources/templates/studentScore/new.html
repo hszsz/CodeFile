@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <th:block th:include="include/bootstrap :: head">
+
+    </th:block>
+</head>
+<body>
+<div th:replace="include/bootstrap :: nav"></div>
+<div class="container">
+
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <h1>StudentScore</h1>
+        <form method="post" th:action="@{/studentScore/create}">
+            <div class="form-group">
+                <label for="studentId" >studentId</label>
+                <input type="text" class="form-control" id="studentId"  name="studentId" placeholder="studentId"  >
+            </div>
+            <div class="form-group">
+                <label for="courseId">courseId</label>
+                <input type="text" class="form-control" id="courseId" name="courseId" placeholder="courseId">
+            </div>
+            <div class="form-group">
+                <label for="dt">dt</label>
+                <input type="text" class="form-control" id="dt" name="dt" placeholder="dt" >
+            </div>
+            <div class="form-group">
+                <label for="score">score</label>
+                <input type="text" class="form-control" id="score" name="score" placeholder="score" >
+            </div>
+
+            <button type="提交" class="btn btn-default">提交</button>
+        </form>
+    </div>
+
+</div> <!-- /container -->
+</body>
+</html>
