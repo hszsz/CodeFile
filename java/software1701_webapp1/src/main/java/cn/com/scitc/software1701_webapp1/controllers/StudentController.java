@@ -26,8 +26,7 @@ public class StudentController {
         model.addAttribute("student", studentOptional.get());
         return "student/edit";
     }
-
-     @PostMapping("/update")
+    @PostMapping("/update")
     private String update(Integer id, String studentId, String className, String name, String address, String mobile, Date birthday){
         log.info("id"+id);
         Optional<Student> byId = studentDao.findById(id);
@@ -42,9 +41,6 @@ public class StudentController {
         log.info("studennt save success");
         return  "redirect:/";
     }
-
-
-
     @RequestMapping("/create")
     private String create(){
         log.info("将要显示create页面");

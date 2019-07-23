@@ -26,28 +26,28 @@ public class StudentController {
         model.addAttribute("student", studentOptional.get());
         return "student/edit";
     }
-//    @PostMapping("/update")
-//    private String update(Integer id, String studentId, String className, String name, String address, String mobile, Date birthday){
-//        log.info("id"+id);
-//        Optional<Student> byId = studentDao.findById(id);
-//        Student student = byId.get();
-//        student.setClassName(className);
-//        student.setName(name);
-//        student.setAddress(address);
-//        student.setMobile(mobile);
-//        student.setBirthday(birthday);
-//
-//        studentDao.save(student);
-//        log.info("studennt save success");
-//        return  "redirect:/";
-//    }
-
     @PostMapping("/update")
-    private String update(Student stu){
-        studentDao.save(stu);
+    private String update(Integer id, String studentId, String className, String name, String address, String mobile, Date birthday){
+        log.info("id"+id);
+        Optional<Student> byId = studentDao.findById(id);
+        Student student = byId.get();
+        student.setClassName(className);
+        student.setName(name);
+        student.setAddress(address);
+        student.setMobile(mobile);
+        student.setBirthday(birthday);
 
+        studentDao.save(student);
+        log.info("studennt save success");
         return  "redirect:/";
     }
+
+//    @PostMapping("/update")
+//    private String update(Student stu){
+//        studentDao.save(stu);
+//
+//        return  "redirect:/";
+//    }
 
     @RequestMapping("/create")
     private String create(){

@@ -34,26 +34,19 @@ public class StudentScoreController {
         model.addAttribute("studentScore", byId.get());
         return "studentScore/edit";
     }
-//    @PostMapping("/update")
-//    private String update(Integer id, String studentId, Integer courseId, Date dt, BigDecimal score){
-//        log.info("id"+id);
-//        Optional<Studentscore> byId = studentScoreDao.findById(id);
-//        Studentscore studentscore= byId.get();
-//        studentscore.setStudentId(studentId);
-//        studentscore.setCourseId(courseId);
-//        studentscore.setDt(dt);
-//        studentscore.setScore(score);
-//        studentScoreDao.save(studentscore);
-//        log.info("course save success");
-//        return  "redirect:/studentScore/list";
-//    }
-
     @PostMapping("/update")
-    private String update(Studentscore studentscore){
-        StudentScoreDao.save
+    private String update(Integer id, String studentId, Integer courseId, Date dt, BigDecimal score){
+        log.info("id"+id);
+        Optional<Studentscore> byId = studentScoreDao.findById(id);
+        Studentscore studentscore= byId.get();
+        studentscore.setStudentId(studentId);
+        studentscore.setCourseId(courseId);
+        studentscore.setDt(dt);
+        studentscore.setScore(score);
+        studentScoreDao.save(studentscore);
+        log.info("course save success");
         return  "redirect:/studentScore/list";
     }
-
     @RequestMapping("/new")
     private String New(){
         log.info("将要显示new页面");
