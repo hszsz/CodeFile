@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<p th:text="#{name}"></p>
+
+<a th:href="@{/(lang=en_US)}">英</a>
+<a th:href="@{/(lang=zh_CN)}">中</a>
 </body>
 </html>
