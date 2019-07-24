@@ -38,3 +38,7 @@ git remote add origin 远程仓库地址
 ~~~linux
 git remote rm origin
 ~~~
+11.拉取远程仓库同步  
+~~~linux
+git pull --rebase origin master
+~~~
